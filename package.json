@@ -9,10 +9,10 @@
 	"version": "1.0.11",
 	"homepage": "https://github.com/26medias/timeseries-analysis",
 	"licenses": [
-	{
-		"type": "MIT",
-		"url": "https://raw.github.com/26medias/timeseries-analysis/master/LICENSE"
-	}
+		{
+			"type": "MIT",
+			"url": "https://raw.github.com/26medias/timeseries-analysis/master/LICENSE"
+		}
 	],
 	"repository": {
 		"type": "git",
@@ -23,10 +23,15 @@
 		"node": "*"
 	},
 	"dependencies": {
-		"underscore": "latest",
-		"google-image-chart": "latest"
+		"google-image-chart": "latest",
+		"underscore": "latest"
 	},
-	"devDependencies": {},
+	"devDependencies": {
+		"mocha": "^7.1.1"
+	},
+	"scripts": {
+		"test": "mocha"
+	},
 	"readmeFilename": "README.md",
 	"bugs": {
 		"url": "https://github.com/26medias/timeseries-analysis/issues"

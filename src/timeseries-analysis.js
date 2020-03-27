@@ -129,8 +129,10 @@ timeseries.prototype.mean = function(data) {
 	var sum 	= 0;
 	var n 		= 0;
 	_.each(data, function(datapoint) {
-		sum += datapoint[1];
-		n++;
+		if (!isNaN(datapoint[1])) {
+			sum += datapoint[1];
+			n++;
+		}
 	});
 	return sum/n;
 }
@@ -146,6 +148,25 @@ timeseries.prototype.stdev = function(data) {
 		n++;
 	});
 	return Math.sqrt(sum/n);
+}
+timeseries.prototype.hasNaN = function(data) {
+	if (!data) {
+		var data = this.data;
+	}
+
+	return data.some(datapoint => isNaN(datapoint[1]));
+}
+timeseries.prototype.countNaN = function(data) {
+	if (!data) {
+		var data = this.data;
+	}
+	
+	return data.reduce((accumulator, currentValue) => {
+		if (isNaN(currentValue[1])) {
+			accumulator += 1;
+		}
+		return accumulator;
+	}, 0);
 }
 
 

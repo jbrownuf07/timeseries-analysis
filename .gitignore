@@ -1,4 +1,10 @@
 #################
+## NPM
+#################
+node_modules/
+package-lock.json
+
+#################
 ## Eclipse
 #################
 
@@ -27,6 +33,13 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+
+#################
+## VS Code
+#################
+/.vscode
+timeseries-analysis.code-workspace
 
 
 #################
